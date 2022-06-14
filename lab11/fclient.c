@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	host = argv[1];
-	port = atoi(argv[2);
+	port = atoi(argv[2]);
 
 	sfd = socket(AF_UNIX, SOCK_STREAM, DEFAULT_PROTOCOL);
 
@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
 	serverAddr.sin_port = htons(port);
 
 	do {
-		result = connect(clientfd, (struct sockaddr* )&serverAddr, sizeof(serverAddr));
+		result = connect(sfd, (struct sockaddr* )&serverAddr, sizeof(serverAddr));
 		if ( result == -1 ) {
 			sleep(1);
 		}
